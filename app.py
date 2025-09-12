@@ -578,6 +578,11 @@ def main():
                             except Exception:
                                 dt_fmt = ""
                             st.markdown(f"- [{it.get('headline','')}]({it.get('url','')}) — {it.get('source','')} {dt_fmt}")
+                            # Pequeño resumen debajo de cada titular si está disponible
+                            summary = (it.get('summary') or it.get('description') or '').strip()
+                            if summary:
+                                short = summary if len(summary) <= 220 else (summary[:217] + '…')
+                                st.caption(short)
                 else:
                     st.caption("Configura FINNHUB_API_KEY para ver titulares.")
             else:
