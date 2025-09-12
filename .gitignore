@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+
+# Streamlit secrets (never commit real keys)
+.streamlit/secrets.toml
+
+# Local env script (user-specific)
+scripts/set_env.sh
+
+# Local data artifacts (except one canonical Parquet to deploy)
+data/*.db
+# Permit committing a single canonical file for Streamlit Cloud
+!data/macro_data.parquet
+# keep folder in repo
+!data/.gitkeep
+# Still ignore other data formats by default
+data/*.parquet
+data/*.csv
+
+# OS/IDE
+.DS_Store
+.vscode/
