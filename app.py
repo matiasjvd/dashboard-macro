@@ -375,8 +375,8 @@ def perplexity_country_brief(api_key: str, country: str, news: List[dict]) -> st
             payload = {
                 "model": mdl,
                 "messages": [
-                    {"role": "system", "content": "Eres un analista macro y de mercados. Resume impacto en FX, bonos y equity por país."},
-                    {"role": "user", "content": f"País: {country}\nNoticias recientes:\n{news_block}\n\nElabora un brief de 6-10 viñetas con insights accionables."}
+                    {"role": "system", "content": "Eres un analista macro y de mercados. Resume impacto en FX, bonos y equity por país. IMPORTANTE: Siempre responde en español, sin importar el idioma de las noticias fuente."},
+                    {"role": "user", "content": f"País: {country}\nNoticias recientes:\n{news_block}\n\nElabora un brief de 6-10 viñetas con insights accionables. Responde SIEMPRE en español."}
                 ],
                 "temperature": 0.4,
             }
